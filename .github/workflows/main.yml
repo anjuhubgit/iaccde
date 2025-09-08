@@ -11,6 +11,15 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        module_path:
+        - https://github.com/anjuhubgit/iaccde.git/modules/vpc
+        - https://github.com/anjuhubgit/iaccde.git/modules/ec2
+        - https://github.com/anjuhubgit/iaccde.git/modules/secrets_manager
+        - https://github.com/anjuhubgit/iaccde.git/modules/rds
+        - https://github.com/anjuhubgit/iaccde.git/modules/s3
+        - https://github.com/anjuhubgit/iaccde.git/modules/ecr
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
