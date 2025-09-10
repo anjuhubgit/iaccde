@@ -11,15 +11,7 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        module_path:
-        - https://github.com/anjuhubgit/iaccde.git/modules/vpc
-        - https://github.com/anjuhubgit/iaccde.git/modules/ec2
-        - https://github.com/anjuhubgit/iaccde.git/modules/secrets_manager
-        - https://github.com/anjuhubgit/iaccde.git/modules/rds
-        - https://github.com/anjuhubgit/iaccde.git/modules/s3
-        - https://github.com/anjuhubgit/iaccde.git/modules/ecr
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -35,6 +27,7 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.x.x # Specify your desired Terraform version
+          cd environment/dev
 
       - name: Terraform Init
         run: terraform init
