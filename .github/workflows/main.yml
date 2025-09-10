@@ -31,6 +31,8 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-
+        
+       run : cd /environment/dev
+       
       - name: Terraform Plan
         run: terraform plan
