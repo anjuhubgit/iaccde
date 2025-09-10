@@ -9,7 +9,7 @@ module "vpc" {
 }
 
 module "ec2" {
-  source = "https://github.com/anjuhubgit/iaccde.git/modules/ec2"
+  source = "../modules/ec2"
   ami_id = "ami-0c55b159cbfafe1f0"
   instance_type = "t2.micro"
   keypair_name = "devkey"
@@ -19,13 +19,13 @@ module "ec2" {
 }
 
 module "secrets_manager" {
-  source = "https://github.com/anjuhubgit/iaccde.git/modules/secrets_manager"
+  source = "../modules/secrets_manager"
   env = var.env
   db_password = var.db_password
 }
 
 module "rds" {
-  source = "https://github.com/anjuhubgit/iaccde.git/modules/rds"
+  source = "../modules/rds"
   env = var.env
   vpc_id                = module.vpc.vpc_id
   subnet_ids            = module.vpc.private_subnet_ids
@@ -35,13 +35,13 @@ module "rds" {
   
 }
 module "s3_assets" {
-  source       = "https://github.com/anjuhubgit/iaccde.git/modules/s3"
+  source       = "../modules/s3"
   env = var.env
   bucket_name  = "dev-app-assets"
 }
 
 module "ecr_repo" {
-  source  = "https://github.com/anjuhubgit/iaccde.git/modules/ecr"
+  source  = "../modules/ecr"
   env     = var.env
   repo_name  = "dev-web-app"
 }
