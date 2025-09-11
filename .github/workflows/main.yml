@@ -12,7 +12,7 @@ jobs:
   terraform:
     runs-on: ubuntu-latest
       defaults:
-            run:
+          run:
             working-directory: ./environment/dev
     
     steps:
