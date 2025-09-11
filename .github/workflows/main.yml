@@ -27,17 +27,13 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.x.x # Specify your desired Terraform version
-          run : cd /environment/dev
+         # run : cd /environment/dev
 
       - name: Terraform Init
         run: terraform init
+        working-directory: ./environment/dev
             
-      
-       
-      #- name: path
-      #  run: cd environment/dev
-
-       - name: Terraform plan       
-         run:  terraform plan
+      - name: Terraform plan       
+         run: terraform plan
          working-directory: ./environment/dev
      
