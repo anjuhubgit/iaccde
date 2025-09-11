@@ -34,6 +34,6 @@ jobs:
       
        
       - name: Terraform Plan
-        run: 
-        cd environment/dev
-        terraform plan
+        run: cd environment/dev
+              terraform plan
+     
