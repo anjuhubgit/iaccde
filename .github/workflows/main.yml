@@ -11,6 +11,9 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
+    defaults:
+    run:
+    working-directory: ./environment/dev
     
     steps:
       - name: Checkout code
@@ -31,9 +34,9 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: ./environment/dev
+        #working-directory: ./environment/dev
             
       - name: Terraform plan       
          run: terraform plan
-         working-directory: ./environment/dev
+        # working-directory: ./environment/dev
      
