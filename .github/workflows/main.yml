@@ -31,12 +31,13 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-              terraform plan
+            
       
        
       #- name: path
       #  run: cd environment/dev
 
-      # - name: Terraform plan       
-        #  run:  terraform plan
+       - name: Terraform plan       
+         run:  terraform plan
+         working-directory: ./environment/dev
      
