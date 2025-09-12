@@ -34,10 +34,12 @@ jobs:
         run: terraform init
         working-directory: ./environment/dev
 
-     - name: Terraform Plan
-      run: terraform plan -out=tfplan
-     working-directory: ./environment/dev
+      - name: Terraform plan
+        run: terraform plan
+        working-directory: ./environment/dev
 
+
+  
             
      
      
