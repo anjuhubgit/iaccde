@@ -39,9 +39,15 @@ jobs:
         run: terraform plan
         working-directory: ./environment/dev
 
-      - name: Terraform apply
-        run: terraform apply
-        working-directory: ./environment/dev
+      #- name: Terraform apply
+       # run: terraform apply
+      #  working-directory: ./environment/dev
+
+      - name: upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: terraform.tfstate
+          path: ./environment/dev
 
 
   
