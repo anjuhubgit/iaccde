@@ -2,6 +2,7 @@
 # secretkey = "Vdn66YK1sbTvLHxmcE4XjmFwtbKJJIUVMsuXJvk8"
 # aws_region = "us-east-1"
 #db_username = "myuser"
-db_password = "MySecurePassword123"
+#db_password = "MySecurePassword123"
 #keypair_name = "my-ssh-key"
+
 # project_name = "sns"
